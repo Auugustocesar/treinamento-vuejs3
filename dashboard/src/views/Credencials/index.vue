@@ -27,7 +27,7 @@
       <div v-else
            class="flex py-3 pl-5 mt-2 rounded justify-between items-center bg-brand-gray w-full lg:w-1/2">
         <span v-if="state.hasError">Erro ao carregar a apikey</span>
-        <span v-else id="apikey" > {{ store.User.currentUser.apiKey }}</span>
+        <span v-else id="apikey"> {{ store.User.currentUser.apiKey }}</span>
         <div class="flex ml-20 mr-5" v-if="!state.hasError">
           <icon
             @click="handleCopy"
@@ -56,9 +56,12 @@
       <div v-else
            class="py-3 pl-5 pr-20 mt-2 rounded bg-brand-gray w-full lg:w-2/3 overflow-x-scroll">
         <span v-if="state.hasError">Erro ao carregar o script</span>
-        <pre v-else>&lt;script src="https://auugustocesar-feedbacker-widget.netfliy.app?apiKey={{
-            store.User.currentUser.apiKey
-          }}"&gt;&lt;/script&gt;</pre>
+        <pre v-else>&lt;script
+  defer
+  async
+  onload="init('{{ store.User.currentUser.apiKey }}')"
+  src="https://auugustocesar-feedbacker-widget.netfliy.app/init.js"
+&gt;&lt;/script&gt;</pre>
       </div>
     </div>
   </div>
