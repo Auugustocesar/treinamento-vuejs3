@@ -38,7 +38,7 @@ function init(apiKey) {
   }
 
   const script = document.createElement('script')
-  script.src = 'https://openfpcdn.io/fingerprintjs/v3.3.3/esm.min.js'
+  script.src = '//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js'
   script.async = 'async'
   script.addEventListener('load', handleLoadWidget)
 
